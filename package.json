@@ -1,0 +1,25 @@
+{
+  "name": "fromfrom-benchmark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/benchmark": "^1.0.31",
+    "@types/faker": "^4.1.6",
+    "@types/lodash": "^4.14.144",
+    "@types/node": "^12.11.5",
+    "benchmark": "^2.1.4",
+    "faker": "^4.1.0",
+    "fromfrom": "^1.4.0",
+    "lodash": "^4.17.15",
+    "snapshot-diff": "^0.5.2",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "scripts": {
+    "start": "ts-node src/benchmark.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
