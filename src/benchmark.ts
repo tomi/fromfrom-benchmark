@@ -10,8 +10,8 @@ const HOW_MANY = 10000;
 const data = generateData(HOW_MANY);
 
 const benchmarks = {
-  groupByAndSort,
   filterSortTake,
+  groupByAndSort,
   filterMap,
   toSet
 };

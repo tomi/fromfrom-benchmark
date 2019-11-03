@@ -16,4 +16,5 @@ export interface IBenchmark {
   fromfrom: BenchmarkRun;
   lodash: BenchmarkRun;
   native: BenchmarkRun;
+  "linq-es2015"?: BenchmarkRun;
 }

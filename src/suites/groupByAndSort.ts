@@ -1,6 +1,7 @@
 import { from } from "fromfrom";
 import * as _ from "lodash";
 import { IBenchmark } from "../types";
+import * as Enumerable from "linq-es2015";
 
 export const groupByAndSort: IBenchmark = {
   native: data => {
@@ -34,5 +35,16 @@ export const groupByAndSort: IBenchmark = {
     _.chain(data)
       .groupBy("country")
       .mapValues(items => _.sortBy(items, user => -user.score))
-      .value()
+      .value(),
+
+  "linq-es2015": data =>
+    Enumerable.asEnumerable(data)
+      .GroupBy(u => u.country)
+      .Aggregate({} as any, (all, u) => {
+        all[u.key] = Enumerable.asEnumerable(u)
+          .OrderByDescending(u => u.score)
+          .ToArray();
+
+        return all;
+      })
 };
